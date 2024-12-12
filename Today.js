@@ -11,26 +11,25 @@ const SidebarLayout = ({ children }) => {
 
   return (
     <div className="flex h-screen">
-      {/* Sidebar */}
       <div 
-        className="h-screen transition-all duration-300 flex flex-col w-64"
+        className="transition-all duration-300 flex flex-col items-center w-64"
         style={{ backgroundColor: '#C19363' }}
       >
-        {/* Sidebar Header */}
-        <div className="p-6 flex items-center">
-          <div>
+        {/* Header - center the title */}
+        <div className="p-6 flex flex-col items-center">
+          <div className="text-center">
             <h1 className="font-bold text-2xl text-black">OurMinds</h1>
-            <h2 className="font-bold text-xl text-black">Journaling</h2>
+            <h2 className="font-bold text-2xl text-black">Journaling</h2>
           </div>
         </div>
 
-        {/* Navigation Items */}
-        <nav className="flex-1 py-4">
+        {/* Navigation - center the items */}
+        <nav className="flex-1 py-4 w-full">
           {navItems.map((item) => (
             <a
               key={item.label}
               href={`/${item.label.toLowerCase()}`}
-              className="flex items-center px-6 py-3 text-black hover:bg-black/10 space-x-3"
+              className="flex items-center justify-center py-3 text-black hover:bg-black/10 space-x-3"
             >
               {item.icon}
               <span className="font-medium">{item.label}</span>
@@ -38,9 +37,9 @@ const SidebarLayout = ({ children }) => {
           ))}
         </nav>
 
-        {/* User Profile at Bottom */}
-        <div className="p-6 border-t border-black/10">
-          <div className="flex items-center space-x-3">
+        {/* User profile - center it */}
+        <div className="p-6 border-t border-black/10 w-full">
+          <div className="flex items-center justify-center space-x-3">
             <User size={24} className="text-black" />
             <span className="font-medium text-black">UmiPark</span>
           </div>
